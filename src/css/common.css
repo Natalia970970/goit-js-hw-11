@@ -16,3 +16,52 @@ img {
   display: block;
   max-width: 100%;
 }
+
+a {
+  text-decoration: none;
+}
+
+.is-hidden {
+  visibility: hidden;
+}
+
+.search-form{
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 17, 255, 0.651);
+  padding: 15;
+  border-radius: 4;
+  position: sticky;
+  top: 0;
+}
+
+input {
+  padding: 5;
+  border-radius: 4;
+  border-color: transparent;
+  margin-right: 3;
+}
+
+.search {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 4;
+}
+
+.gallery {
+  display: flex;
+  gap: 30;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  border: #212121;
+  border-radius: 4;
+}
+
+.load-more {
+  background-color:  rgba(0, 17, 255, 0.651);
+  border: none;
+  border-radius: 4;
+  padding: 10;
+}
