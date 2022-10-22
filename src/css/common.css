@@ -67,3 +67,8 @@ input {
   padding: 10;
   
 }
+
+.load-more:hover {
+  box-shadow: 10px 5px 5px rgba(30, 0, 255, 0.696);
+  cursor: pointer;
+}
