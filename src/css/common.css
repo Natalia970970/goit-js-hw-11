@@ -50,6 +50,7 @@ input {
 
 .gallery {
   display: flex;
+  justify-content: center;
   gap: 30;
   flex-wrap: wrap;
 }
@@ -64,4 +65,5 @@ input {
   border: none;
   border-radius: 4;
   padding: 10;
+  
 }
