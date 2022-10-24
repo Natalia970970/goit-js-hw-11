@@ -1,10 +1,9 @@
-import axios from 'axios';
 import Notiflix from 'notiflix';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css"
+import {search} from './js/response.js'
 
-const BASE_URL = 'https://pixabay.com/api/';
-const KEY = '30777543-e493bf0203eb427eb0034605d';
+
 
 const form = document.querySelector('.search-form');
 const input = document.querySelector('input');
@@ -23,8 +22,9 @@ form.addEventListener('submit', async (e) => {
     } 
 
     try {
-        const response = await axios.get(`${BASE_URL}?key=${KEY}&q=${searchValue}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${perPage}`);
+        const response = await search (searchValue, page, perPage);
         if(response.data.hits.length === 0) {
+            loadMoreBtn.classList.add('is-hidden');
             Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
         }
         if(response.data.hits.length > 0) {
@@ -51,7 +51,7 @@ loadMoreBtn.addEventListener('click', async (e) => {
     }
 
     try{
-        const response = await axios.get(`${BASE_URL}?key=${KEY}&q=${searchValue}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${perPage}`);
+        const response = await search (searchValue, page, perPage);
         createCardMarkup(response.data.hits);
         new SimpleLightbox('.gallery a', {
             captionsData: "alt",
